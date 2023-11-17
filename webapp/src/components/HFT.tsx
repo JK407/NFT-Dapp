@@ -44,8 +44,8 @@ const HFT: React.FC<Props> = (props) => {
                 const response = await fetch('https://api.pinata.cloud/pinning/pinFileToIPFS', {
                     method: 'POST',
                     headers: {
-                        'pinata_api_key': 'f75bfb354b39c3f2b075',
-                        'pinata_secret_api_key': '29933283df11a9a157dd354084a9fc65b4d30985b45b94a20803c3cf2da4daf6',
+                        'pinata_api_key': 'YOUR_PINATA_API_KEY',
+                        'pinata_secret_api_key': 'YOUR_PINATA_SECRET_API_KEY',
                     },
                     body: formData,
                 });
