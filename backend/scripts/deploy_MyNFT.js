@@ -21,9 +21,9 @@ async function main() {
     };
 
     // 创建ABI和合约地址文件
-    fs.writeFileSync("./src/OFT.json", JSON.stringify(contractInfo, null, 2));
+    fs.writeFileSync("./src/HFT.json", JSON.stringify(contractInfo, null, 2));
 
-    console.log("ABI and address written to OFT.json");
+    console.log("ABI and address written to HFT.json");
 }
 
 // We recommend this pattern to be able to use async/await everywhere

@@ -2,7 +2,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { VStack, Heading, Box, LinkOverlay, LinkBox} from "@chakra-ui/layout"
-import { Text, Button } from '@chakra-ui/react'
+import {Text, Button, Flex} from '@chakra-ui/react'
 import { useState, useEffect} from 'react'
 import {ethers} from "ethers"
 import HFT from "../components/HFT";
@@ -74,10 +74,12 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>My DAPP</title>
+        <title>Oberl DAPP</title>
       </Head>
 
-      <Heading as="h3"  my={4}>Explore Web3</Heading>          
+      <Flex justifyContent="center">
+        <Heading as="h3" my={4}>NFT Dapp BY Oberl Fitzgeald</Heading>
+      </Flex>
       <VStack>
         <Box w='100%' my={4}>
         {currentAccount  
@@ -98,26 +100,10 @@ const Home: NextPage = () => {
         :<></>
         }
 
-        {/*<Box  mb={0} p={4} w='100%' borderWidth="1px" borderRadius="lg">*/}
-        {/*  <Heading my={4}  fontSize='xl'>Read ClassToken Info</Heading>*/}
-        {/*  <ReadERC20*/}
-        {/*    addressContract={addressERC20}*/}
-        {/*    currentAccount={currentAccount}*/}
-        {/*  />*/}
-        {/*</Box>*/}
-
-        {/*<Box  mb={0} p={4} w='100%' borderWidth="1px" borderRadius="lg">*/}
-        {/*  <Heading my={4}  fontSize='xl'>Transfer Classtoken</Heading>*/}
-        {/*  <TransferERC20*/}
-        {/*    addressContract={addressERC20}*/}
-        {/*    currentAccount={currentAccount}*/}
-        {/*  />*/}
-        {/*</Box>*/}
-
         <Box  mb={0} p={4} w='100%' borderWidth="1px" borderRadius="lg">
           <Heading my={4}  fontSize='xl'>NFT</Heading>
           <HFT
-              contractAddress='0x7969c5eD335650692Bc04293B07F5BF2e7A673C0'
+              contractAddress='0x5FbDB2315678afecb367f032d93F642f64180aa3'
               currentAccount={currentAccount}
           />
         </Box>
