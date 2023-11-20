@@ -16,6 +16,7 @@ const Home: NextPage = () => {
   const [chainId, setChainId] = useState<number | undefined>()
   const [chainname, setChainName] = useState<string | undefined>()
 
+
   useEffect(() => {
     //get ETH balance and network info only when having currentAccount 
     if(!currentAccount || !ethers.utils.isAddress(currentAccount)) return
@@ -45,16 +46,6 @@ const Home: NextPage = () => {
       console.log("please install MetaMask")
       return
     }
-    /*
-    //change from window.ethereum.enable() which is deprecated
-    //call window.ethereum.request() directly
-    window.ethereum.request({ method: 'eth_requestAccounts' })
-    .then((accounts:any)=>{
-      if(accounts.length>0) setCurrentAccount(accounts[0])
-    })
-    .catch('error',console.error)
-    */
-
     //we can do it using ethers.js
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     provider.send("eth_requestAccounts", [])
@@ -92,16 +83,30 @@ const Home: NextPage = () => {
         }
         </Box>
         {currentAccount  
-          ?<Box  mb={0} p={4} w='100%' borderWidth="1px" borderRadius="lg">
-          <Heading my={4}  fontSize='xl'>Account info</Heading>
-          <Text>ETH Balance of current account: {balance}</Text>
-          <Text>Chain Info: ChainId {chainId} name {chainname}</Text>
-        </Box>
-        :<></>
+          ?<Box mb={0} p={4} w='100%' borderWidth="1px" borderRadius="lg">
+              <Heading my={4} fontSize='3xl' textAlign='center'>
+                Account Info
+              </Heading>
+              <Text textAlign='center'>
+                ETH Balance of current account: {balance}
+              </Text>
+              <Text textAlign='center'>
+                Chain Info: ChainId {chainId} name {chainname}
+              </Text>
+            </Box>
+
+            :<></>
         }
 
         <Box  mb={0} p={4} w='100%' borderWidth="1px" borderRadius="lg">
-          <Heading my={4}  fontSize='xl'>NFT</Heading>
+          <Heading my={4} fontSize='5xl' textAlign='center'>
+            NFT
+          </Heading>
+          <Text textAlign='center' mt={2} fontWeight='bold'>
+            合约地址：0x5FbDB2315678afecb367f032d93F642f64180aa3
+          </Text>
+
+
           <HFT
               contractAddress='0x5FbDB2315678afecb367f032d93F642f64180aa3'
               currentAccount={currentAccount}

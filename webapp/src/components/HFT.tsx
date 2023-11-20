@@ -81,8 +81,8 @@ const HFT: React.FC<Props> = (props) => {
                 const response = await fetch('https://api.pinata.cloud/pinning/pinFileToIPFS', {
                     method: 'POST',
                     headers: {
-                        'pinata_api_key': 'YOUR_PINATA_API_KEY',
-                        'pinata_secret_api_key': 'YOUR_PINATA_SECRET_API_KEY',
+                        'pinata_api_key': 'ed2bfae38ffac0b0ad6a',
+                        'pinata_secret_api_key': 'fc54c20c18a84cb0f7353784168aab29cec1ba589043d606be74b58c3776b5b5',
                     },
                     body: formData,
                 });
@@ -349,7 +349,10 @@ const HFT: React.FC<Props> = (props) => {
                                     )}
                                 </div>
                             </FormControl>
-                            <Button onClick={generateTokenURI}>生成 Token URI</Button>
+                            <Button onClick={generateTokenURI} style={{ width: '200px' }}>
+                                生成 Token URI
+                            </Button>
+
                         </Stack>
 
                     </div>
