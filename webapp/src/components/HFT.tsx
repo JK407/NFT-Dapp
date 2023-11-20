@@ -142,8 +142,8 @@ const HFT: React.FC<Props> = (props) => {
             let parsedData;
             parsedData = JSON.parse(jsonData);
 
-            const apiKey = 'ed2bfae38ffac0b0ad6a';
-            const apiSecret = 'fc54c20c18a84cb0f7353784168aab29cec1ba589043d606be74b58c3776b5b5';
+            const apiKey = 'YOUR_PINATA_API_KEY';
+            const apiSecret = 'YOUR_PINATA_SECRET_API_KEY';
 
             const url = 'https://api.pinata.cloud/pinning/pinJSONToIPFS';
 
